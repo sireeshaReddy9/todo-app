@@ -1,0 +1,291 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.auth-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.auth-form input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.auth-form button {
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-form button:hover:not(:disabled) {
+  background: #5a67d8;
+}
+
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-form p {
+  text-align: center;
+  color: #666;
+}
+
+.auth-form a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+  text-align: center;
+}
+
+.todo-app {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.todo-header h1 {
+  color: #333;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #c82333;
+}
+
+.todo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.add-todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.add-todo-form input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.add-todo-form button {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-todo-form button:hover:not(:disabled) {
+  background: #5a67d8;
+}
+
+.todos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.todo-item.completed {
+  opacity: 0.7;
+  background: #e9ecef;
+}
+
+.todo-item.completed .todo-content h3,
+.todo-item.completed .todo-content p {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.todo-content {
+  flex: 1;
+}
+
+.todo-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.todo-content p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-actions input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+@media (max-width: 768px) {
+  .todo-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .add-todo-form {
+    flex-direction: column;
+  }
+  
+  .todo-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .todo-actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* Edit Form */
+.edit-todo-form {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+/* Edit Inputs */
+.edit-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Edit Buttons */
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.edit-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
