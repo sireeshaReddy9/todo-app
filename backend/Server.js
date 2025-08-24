@@ -28,6 +28,28 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Todo API Server is running! ",
+    environment: process.env.NODE_ENV || "development",
+    status: "Live",
+    endpoints: {
+      auth: {
+        signup: "POST /signUp",
+        login: "POST /login", 
+        logout: "POST /logout",
+        profile: "GET /profile"
+      },
+      todos: {
+        getAllTodos: "GET /api/todos",
+        createTodo: "POST /api/todos",
+        updateTodo: "PATCH /api/todos/:id",
+        deleteTodo: "DELETE /api/todos/:id"
+      }
+    }
+  });
+});
+
 // Routes
 app.use("/", userRoutes);
 app.use("/api", todoRoutes);
