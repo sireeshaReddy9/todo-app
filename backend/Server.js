@@ -12,12 +12,23 @@ const todoRoutes = require("./routes/todo.js");
 
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:3000',                        
+  'https://todo-app-frontend-l2a0.onrender.com'   
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: (origin, cb) => {
+      if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+      return cb(new Error('Not allowed by CORS'));
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
+
 
 app.use(express.json());
 app.use(cookieParser());
