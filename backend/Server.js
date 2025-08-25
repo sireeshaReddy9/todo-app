@@ -19,8 +19,6 @@ app.use(
   })
 );
 
-console.log("MONGODB_URI:", process.env.MONGODB_URI ? "✅ Found" : "❌ Missing");
-console.log("PORT:", process.env.PORT || "Using default 7000");
 app.use(express.json());
 app.use(cookieParser());
 
