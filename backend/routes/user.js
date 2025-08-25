@@ -50,12 +50,12 @@ router.post("/login", async (req, res) => {
       secure: true,        
       path: "/"            
     });
-
+      return res.status(200).json({ message: "Logged in" });
     } else {
       throw new Error("Invalid Credentials");
     }
   } catch (error) {
-    res.status(400).send("ERROR " + error);
+   return res.status(400).send("ERROR " + error);
   }
 });
 
